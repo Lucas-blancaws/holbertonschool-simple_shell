@@ -5,45 +5,21 @@
  */
 int main(void)
 {
-char *buffer = NULL;
-size_t bufsize = 0;
-ssize_t characters;
-pid_t pid;
-char *argv[2] = {buffer, NULL};
+char *line = NULL;
 extern char **environ;
-int status;
+char **args;
+size_t len = 0;
 
-while (1)
-{
-	printf("#cisfun$ ");
-	characters = getline(&buffer, &bufsize, stdin);
-	if (characters != -1)
-	{
-		buffer[strlen(buffer) - 1] = '\0';
-		argv[0] = buffer;
-		pid = fork();
-
-		if (pid == -1)
-		{
-			perror("Error:");
-		}
-		else if (pid == 0)
-		{
-			if (execve(argv[0], argv, environ) == -1)
-			{
-				perror("Error:");
-			}
-		}
-		else
-		{
-			wait(&status);
-		}
-	}
-	else
-	{
-		break;
-	}
-}
-free(buffer);
-return (0);
+    while (1)
+    {
+        prompt();
+        if (read_line(&line) == -1)
+            break;
+        args = split_line(line);
+        if (!handle_builtin(args))
+            execute_command(args, environ);
+        free(args);
+    }
+    free(line);
+    return (0);
 }
