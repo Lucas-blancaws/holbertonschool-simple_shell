@@ -14,7 +14,7 @@ struct stat st;
 while (dir)
 {
 snprintf(full, sizeof(full), "%s/%s", dir, cmd);
-	if (stat(full, &st) == 0 && (st.st_mode & S_IXUSR))
+	if (stat(full, &st) == 0)
 	{
 		free(copy);
 		return full;
