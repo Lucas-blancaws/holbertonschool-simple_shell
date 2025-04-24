@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <errno.h>
 
+int main(void);
 void prompt(void);
 int read_line(char **buffer);
 char **split_line(char *line);
