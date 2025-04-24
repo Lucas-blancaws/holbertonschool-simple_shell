@@ -1,20 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "shell.h"
 /**
- * main - prompt.c
- * Return: Always 0.
+ * prompt- affiche prompt dans le terminal
+ * Return: $
  */
-int main(void)
+void prompt(void)
 {
-char *buffer = NULL;
-size_t bufsize = 32;
-ssize_t characters;
-
-printf("$ ");
-characters = getline(&buffer, &bufsize, stdin);
-if (characters != -1)
-printf("%s", buffer);
-free(buffer);
-
-return (0);
+write(STDOUT_FILENO, "$ ", 2);
 }
