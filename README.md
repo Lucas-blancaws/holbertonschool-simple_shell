@@ -126,6 +126,8 @@ valgrind --leak-check=full ./hsh
 == All heap blocks were freed -- no leaks are possible
 ```
 ---
+## 🗺️ Flowchart 
+![Logo de mon projet](Images/FLOWCHART.jpg)
 
 ## 🧑‍💼 Authors
 
