@@ -52,7 +52,7 @@ $ exit
 
 Files
 
-main.c → main loop, input parsing, and command execution.
+simple_shell.c → main loop, input parsing, and command execution.
 
 shell.h → header file with function prototypes and macros.
 
