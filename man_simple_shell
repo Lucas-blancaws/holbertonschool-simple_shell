@@ -1,0 +1,61 @@
+.TH HSH 1 "August 2025" "1.0" "User Commands"
+.SH NAME
+hsh \- simple UNIX command interpreter
+.SH SYNOPSIS
+.B hsh
+.br
+Interactive mode:
+.B ./hsh
+.br
+Non-interactive mode:
+.B echo "command" | ./hsh
+.SH DESCRIPTION
+.B hsh
+is a simple UNIX command interpreter written in C.
+
+It provides a minimal shell environment where users can type
+commands, run programs from the system PATH, and use built-in
+commands such as
+.B exit
+and
+.B env .
+
+The shell runs in two modes:
+.RS
+.IP \(bu 2
+Interactive mode: displays a prompt and waits for user input.
+.IP \(bu 2
+Non-interactive mode: reads commands from standard input.
+.RE
+
+.SH REQUIREMENTS
+The shell was developed and tested on:
+.RS
+.IP \(bu 2
+Ubuntu 20.04 LTS
+.IP \(bu 2
+GCC with options:
+\fBgcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh\fR
+.RE
+
+.SH BUILTINS
+The following built-in commands are supported:
+.TP
+.B exit
+Exit the shell.
+.TP
+.B env
+Print the current environment.
+
+.SH USAGE
+Example interactive session:
+.PP
+.EX
+$ ./hsh
+$ ls -l
+$ pwd
+$ env
+$ exit
+.EE
+
+Example non-interact
