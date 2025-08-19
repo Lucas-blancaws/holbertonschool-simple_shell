@@ -101,31 +101,34 @@ char *find_command(char *cmd)
 }
 
 /**
- * execute_command - executes a command
- * @args: array of arguments
- * @cmd: cmd
- */
+* execute_command - executes a command
+* @args: array of arguments
+*/
 
-void execute_command(char **args, char *cmd)
+void execute_command(char **args)
 {
-	pid_t pid;
+	 pid_t pid;
+	 char *cmd;
 
-	pid = fork();
-	if (pid == -1)
+	 cmd = find_command(args[0]);
+
+	if (cmd == NULL)
 	{
-		perror("fork");
+		printf("%s: command not found\n", args[0]);
 		return;
 	}
 
+	 pid = fork();
+
 	if (pid == 0)
 	{
-		execve(cmd, args, environ);
-		perror("execve");
-		exit(EXIT_FAILURE);
+		 execve(cmd, args, environ);
+		 perror("execve");
+		 exit(1);
 	}
 	else
 	{
-		wait(NULL);
+		 wait(NULL);
 	}
-	free(cmd);
+	 free(cmd);
 }
