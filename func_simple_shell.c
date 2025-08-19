@@ -114,7 +114,7 @@ void execute_command(char **args)
 
 	if (cmd == NULL)
 	{
-		printf("%s: command not found\n", args[0]);
+		printf("%s: No such file or directory\n", args[0]);
 		return;
 	}
 
