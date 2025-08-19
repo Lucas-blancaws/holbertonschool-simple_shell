@@ -24,7 +24,8 @@ int main(void)
 		line[strcspn(line, "\n")] = '\0';
 
 		if (strcmp(line, "exit") == 0)
-			break;
+			free(line);
+			exit(0);
 
 		if (strcmp(line, "env") == 0)
 		{
