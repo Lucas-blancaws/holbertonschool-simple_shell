@@ -11,7 +11,7 @@
 
 extern char **environ;
 
-void execute_command(char **args);
+void execute_command(char **args, char *cmd);
 void print_env(void);
 int parse_input(char *line, char **args);
 char *find_command(char *cmd);
