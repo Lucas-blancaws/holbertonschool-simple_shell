@@ -103,25 +103,25 @@ char *find_command(char *cmd)
 /**
  * execute_command - executes a command
  * @args: array of arguments
+ * @cmd: cmd
  */
 
-void execute_command(char **args)
+void execute_command(char **args, char *cmd)
 {
 	pid_t pid;
-	char *cmd;
 
-	cmd = find_command(args[0]);
-	if (cmd == NULL)
+	pid = fork();
+	if (pid == -1)
 	{
-		printf("%s: command not found\n", args[0]);
+		perror("fork");
 		return;
 	}
-	pid = fork();
+
 	if (pid == 0)
 	{
 		execve(cmd, args, environ);
 		perror("execve");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	else
 	{
