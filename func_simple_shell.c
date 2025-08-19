@@ -111,6 +111,11 @@ void execute_command(char **args)
 	char *cmd;
 
 	cmd = find_command(args[0]);
+	if (cmd == NULL)
+	{
+		printf("%s: command not found\n", args[0]);
+		return;
+	}
 	pid = fork();
 	if (pid == 0)
 	{
