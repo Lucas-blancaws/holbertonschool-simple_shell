@@ -13,7 +13,7 @@ int main(void)
 
 	while (1)
 	{
-		printf("$ ");
+		printf("#cisfun$ ");
 
 		if (getline(&line, &len, stdin) == -1)
 		{
