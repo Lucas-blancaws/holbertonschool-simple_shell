@@ -13,13 +13,14 @@ int main(void)
 
 	while (1)
 	{
-		printf("#cisfun$ ");
+		if (isatty(STDIN_FILENO))
+		{
+			printf("$ ");
+			fflush(stdout);
+		}
 
 		if (getline(&line, &len, stdin) == -1)
-		{
-			printf("\n");
 			break;
-		}
 
 		line[strcspn(line, "\n")] = '\0';
 

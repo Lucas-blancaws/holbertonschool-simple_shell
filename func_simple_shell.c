@@ -122,9 +122,9 @@ void execute_command(char **args)
 
 	if (pid == 0)
 	{
-		 execve(cmd, args, environ);
-		 perror("execve");
-		 exit(1);
+		execve(cmd, args, environ);
+		perror("execve");
+		exit(1);
 	}
 	else
 	{
