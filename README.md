@@ -8,7 +8,15 @@
 It allows the execution of commands, management of environment variables, and supports both interactive and non-interactive modes.
 
 ---
+## 🧱 Project Structure
 
+| File                 | Description                                                                                      |
+|----------------------|--------------------------------------------------------------------------------------------------|
+| `simple_shell.c`     | Contains the main function and the shell loop — reads user input and manages command flow.       |
+| `func_simple_shell.c`| Implements main shell functionalities like parsing input, executing commands, and built-ins.    |
+| `shell.h`            | Header file declaring function prototypes, macros, and global variables (e.g., `environ`).       |
+
+---
 ## 🚀 Features
 
 - 🔹 Execution of standard Unix commands (`ls`, `pwd`, etc.)
@@ -18,11 +26,6 @@ It allows the execution of commands, management of environment variables, and su
 - 🔹 Built-in commands:
   - `exit`: exits the shell
   - `env`: displays environment variables
-  - `setenv`: adds or modifies an environment variable
-  - `unsetenv`: removes an environment variable
-- 🔹 Error handling: returns status code `127` if command is not found
-
-
 ---
 ## REQUIREMENTS
 - Allowed editors: vi, vim, emacs
@@ -74,6 +77,13 @@ It allows the execution of commands, management of environment variables, and su
 - write
 
 ---
+## 🛠️ Compilation
+
+To compile the simple_shell program, run the following command in your terminal:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 simple_shell.c func_simple_shell.c -o hsh
+```
 
 ## 💡 Usage
 
