@@ -26,7 +26,6 @@ int main(void)
 
 		if (strcmp(line, "exit") == 0)
 		{
-			free(line);
 			exit(0);
 		}
 		if (strcmp(line, "env") == 0)
