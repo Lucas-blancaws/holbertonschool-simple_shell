@@ -4,7 +4,7 @@
 
 ## 📖 Description
 
-**`simple_shell`** is a simple implementation of a Unix shell in C, developed as part of the **Holberton School** curriculum.  
+**`simple_shell`** is a simple implementation of a Unix shell in C, developed as part of the **Holberton School** curriculum.
 It allows the execution of commands, management of environment variables, and supports both interactive and non-interactive modes.
 
 ---
@@ -136,12 +136,12 @@ valgrind --leak-check=full ./hsh
 == All heap blocks were freed -- no leaks are possible
 ```
 ---
-## 🗺️ Flowchart 
+## 🗺️ Flowchart
 ![alt text](flowchart-simple_shell-1.png)
 
 ## 🧑‍💼 Authors
 
-- **BLANC-PORTIER LUCAS**  
+- **BLANC-PORTIER LUCAS**
 - **PROLONGEAU THEA**
 
 ---
