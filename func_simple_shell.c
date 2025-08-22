@@ -124,7 +124,7 @@ void execute_command(char **args)
 	{
 		execve(cmd, args, environ);
 		perror("execve");
-		exit(0);
+		exit(2);
 	}
 	else
 	{
